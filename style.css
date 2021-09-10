@@ -12,6 +12,15 @@
 	list-style: none;
 	appearance: none;
 }
+@keyframes bounce { 
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+.ball {
+  animation: bounce 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
 
 body {
 	font-family: "Poppins", sans-serif;
@@ -19,7 +28,6 @@ body {
 	/* font-family: 'Playfair Display', serif; */
 	/*  */
 	margin: 0;
-	padding: 0;
 }
 .wrapper {
 	display: flex;
@@ -27,8 +35,15 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-	.wrapper {
+	body {
+		padding: 40px;
+
 	}
+	.ball {
+  animation:none;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
 }
 .nav {
 	grid-area: navbar;
@@ -108,13 +123,16 @@ body {
 
 .dropdown1-content a:hover {
 	background-color: #f1f1f1;
+	transition: all 0.5s ease;
 }
 
 .dropdown1:hover .dropdown1-content {
 	display: block;
+	transition: all 0.5s ease;
 }
 .dropdown1:hover .dropbtn {
 	background-color: #3e8e41;
+	transition: all 0.5s ease;
 }
 
 .dropbtn2 {
@@ -163,11 +181,13 @@ body {
 	flex-direction: column;
 	color: white;
 	position: relative;
+	padding: -40px;
+
 }
 .herocss img {
 	display: block;
 	width: 100%;
-	height: 600px;
+	height: 80vh;
 
 	object-fit: cover;
 	object-position: 90% 90%;
@@ -186,6 +206,8 @@ body {
 	position: absolute;
 	bottom: 0;
 	left: 0;
+	padding: 10px 20px;
+
 }
 .contentcss h1 {
 	font-size: 2.5rem;
@@ -196,34 +218,40 @@ body {
 .contentcss p {
 	font-size: 1.2rem;
 
-	line-height: 30px;
+	line-height: 20px;
 	padding-bottom: 30px;
 }
 .contentcss button {
 	/* Button Primary */
-	width: 150px;
-	height: 60px;
 	background-color: rgb(10, 136, 10);
 	color: white;
 	border-radius: 5px;
 	border: none;
-	opacity: 1;
-	font-size: 1.2rem;
-	line-height: 40px;
+	font-size: 1rem;
 	cursor: pointer;
+	transition: all 0.3s;
+	padding: 14px 32px;
+	outline: none;
+	position: relative;
+	top: 30px;
 }
+.contentcss button:hover {
+	transition: all 0.5s ease;
+}
+
 @media only screen and (min-width: 720px) {
 	.herocss {
 		display: flex;
 		flex-direction: column;
 		color: white;
-		height: 1000px;
+		height: 80vh;
 	}
 	.herocss img {
 		width: 100%;
+		object-fit: fit;
+		object-position: 100% 50%;
 	}
 	.contentcss {
-		float: left;
 		align-items: center;
 		padding: 5px;
 		/* background-color: black; */
@@ -234,39 +262,44 @@ body {
 		display: flex;
 		flex-direction: column;
 		overflow: none;
-		height: 300px;
 		color: white;
-		width: 700px;
 		margin-bottom: auto;
 		position: absolute;
-		top: 50px;
-		left: 50px;
+		bottom: 0;
+		height: 40vh;
+		
 	}
 	.contentcss h1 {
 		font-size: 4rem;
-		padding: 2rem;
+		padding: 12px 24px;
 		margin: 0;
 		line-height: 55px;
+		text-align: center;
 	}
 	.contentcss p {
 		font-size: 3rem;
-
+		padding: 12px 24px;
+		text-align: center;
 		line-height: 45px;
 		padding-bottom: 30px;
 	}
-	.contentcss button {
-		/* Button Primary */
-		width: 250px;
-		height: 60px;
-		background-color: rgb(10, 136, 10);
-		color: white;
-		border-radius: 5px;
-		border: none;
-		opacity: 1;
-		font-size: 1.2rem;
-		line-height: 55px;
-		cursor: pointer;
-	}
+.contentcss button {
+	/* Button Primary */
+	background-color: rgb(10, 136, 10);
+	color: white;
+	border-radius: 5px;
+	border: none;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all 0.3s;
+	padding: 14px 32px;
+	outline: none;
+	position: relative;
+}
+.contentcss button:hover {
+	transition: all 0.5s ease;
+}
+
 }
 .category {
 	position: relative;
@@ -292,6 +325,7 @@ body {
 	box-shadow: 5px 5px 10px rgb(10, 136, 10);
 	width: 150px;
 	transform: scale(1.1);
+	transition: all 0.5s ease;
 }
 .cat-card h3 {
 	text-align: center;
@@ -313,7 +347,6 @@ body {
 	}
 }
 .feature {
-	grid-area: features;
 	position: relative;
 }
 .features {
@@ -321,15 +354,18 @@ body {
 	flex-direction: column;
 }
 .features .img-container {
-	height: 400px;
+	height: 50vhw
 }
 .feature-content h2 {
+	position: relative;
 	font-weight: bolder;
 
-	padding: 20px;
+		padding: 12px;
+
 }
 .feature-content p {
-	padding: 20px;
+	padding: 12px;
+
 }
 .feature-content button {
 	margin: 20px;
@@ -341,8 +377,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	padding: 20px;
-	padding-top: 20px;
+	padding: 12px;
 }
 
 .features img {
@@ -364,6 +399,7 @@ body {
 
 .features button:hover {
 	box-shadow: 5px 5px 10px rgb(10, 136, 10);
+	transition: all 0.2s ease-in-out;
 }
 @media only screen and (min-width: 720px) {
 	.features {
@@ -421,6 +457,7 @@ body {
 
 	.features button:hover {
 		box-shadow: 5px 5px 10px rgb(10, 136, 10);
+		transition: all 0.2s ease-in-out;
 	}
 }
 .blog {
@@ -453,7 +490,17 @@ body {
 	height: 400px;
 	width: 100%;
 }
-
+.blog-card button {
+		font-size: 1rem;
+		border: none;
+		border-radius: 5px;
+		padding: 16px;
+	}
+.blog-card button:hover {
+		box-shadow: 5px 5px 10px rgb(10, 136, 10);
+		text-shadow: 0 1px 2px #000000;
+		transition: all 0.2s ease-in-out;
+	}
 .blogcard-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -487,6 +534,7 @@ body {
 	.blog-card button:hover {
 		box-shadow: 5px 5px 10px rgb(10, 136, 10);
 		text-shadow: 0 1px 2px #000000;
+		transition: all 0.2s ease-in-out;
 	}
 	.blogcard-wrapper {
 		display: flex;
@@ -506,7 +554,7 @@ body {
 .vip .background {
 	width: 100%;
 
-	object-fit:fill;
+	object-fit: fill;
 	object-position: 40% 80%;
 }
 
@@ -524,8 +572,8 @@ body {
 }
 .vip-header {
 	display: flex;
-	height: 150px;
-	width: 150px;
+	height: 100px;
+	width: 100px;
 }
 .vip-header img {
 	width: 100%;
@@ -548,18 +596,18 @@ body {
 	font-weight: 700;
 	text-align: start;
 	opacity: 1;
-	border: 5px solid  #000000;;
+	border: 5px solid #000000;
 	border-radius: 5px;
 	background-color: #000000;
 	color: white;
-	padding: 16px;
+	padding: 16px 24px;
 	margin: 5px;
 	font-size: 1rem;
 }
 
 @media only screen and (min-width: 720px) {
 	.vip {
-		padding-top :50px;
+		padding-top: 50px;
 		display: flex;
 		flex-direction: row;
 		color: white;
@@ -588,7 +636,6 @@ body {
 		justify-content: space-between;
 		align-items: center;
 		margin: 15px;
-
 	}
 	.vip-header {
 		display: flex;
@@ -619,15 +666,14 @@ body {
 		align-items: center;
 		padding: 20px;
 		margin: 5px;
-
 	}
 	.vip-footer button {
 		font-weight: 700;
 		text-align: start;
 		opacity: 1;
-		border: 5px solid  #000000;;
-	border-radius: 5px;
-	background-color: #000000;
+		border: 5px solid #000000;
+		border-radius: 5px;
+		background-color: #000000;
 		color: white;
 		padding: 16px;
 		margin: 5px;
@@ -635,65 +681,81 @@ body {
 		cursor: pointer;
 	}
 }
-.service {
+.service{
 	position: relative;
 }
-.services {
-	display: block;
-	width: 100%;
-	margin-left: -20px;
-	margin-right: 0px;
-}
-.services img {
-	width: 360px;
-}
-.grownwithlove {
-	text-align: center;
-	margin: -65px auto 0;
-	width: 90%;
-	display: block;
-	background-color: #ffffff;
-	position: relative;
-	float: right;
-	border: 2px solid rgb(25, 252, 25);
-	border-bottom: 0;
-}
-.grownwithlove h3 {
-	padding-left: 10px;
-}
-.grownwithlovecard {
-	text-align: center;
-	width: 90%;
-	display: block;
-	background-color: #ffffff;
-	position: relative;
-	float: right;
-	padding-top: 5px;
-}
-.grownwithlovecard img {
-	height: 125px;
-	width: 125px;
-}
-.grownwithlovecard p {
-	padding: 0;
-	font-size: 0.75rem;
-}
-.grownwithlovecard h4 {
-	margin: 0;
-}
-.grownwithlovecardwrapper {
-	margin-top: -8px;
-	margin-left: auto;
-	margin-right: auto;
-	height: 550px;
-	padding: 30px;
-	display: block;
-	width: 90%;
-	border: 2px solid rgb(25, 252, 25);
-	position: relative;
-	float: right;
-	border-top: 0;
-}
+	.services {
+		display: flex;
+		flex-direction: column;
+	}
+	.services-header {
+		height: 200px;
+		position: relative;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+	.services img {
+		padding-top: 20px;
+		position: relative;
+		object-fit: cover;
+		height: 30vh;
+
+		width: 100%;
+	}
+	.grownwithlove {
+		text-align: center;
+		width: 90%;
+		display: block;
+		background-color: #ffffff;
+		position: absolute;
+		border: 3px solid rgb(224, 218, 218);
+
+		border-bottom: 0;
+		text-align: center;
+		align-items: center;
+	}
+	.grownwithlove h3 {
+		color: goldenrod;
+
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 900;
+	}
+	.grownwithlovecard {
+		color: goldenrod;
+		text-align: center;
+		display: block;
+		background-color: #ffffff;
+		position: relative;
+		padding: 10px;
+	}
+	.grownwithlovecard img {
+		height: 100px;
+		width: 100px;
+		padding: 10px;
+	}
+	.grownwithlovecard p {
+		padding: 10px;
+		margin: 0;
+	}
+	.grownwithlovecard h4 {
+		font-size: 1.2rem;
+		margin: 0;
+	}
+	.grownwithlovecardwrapper {
+		margin-left: auto;
+		margin-right: auto;
+		border: 2px solid rgb(224, 218, 218);
+		border-top: 0;
+		position: relative;
+		padding: 20px;
+		height: auto;
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 20px;
+	}
 @media only screen and (min-width: 720px) {
 	.services {
 		display: flex;
@@ -808,6 +870,7 @@ body {
 	width: 50%;
 }
 .footer-nav li {
+	font-family: "Playfair Display", serif;
 	margin: 10px;
 	text-align: center;
 	cursor: pointer;
